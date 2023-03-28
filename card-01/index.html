@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Design</title>
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #16384c;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+
+      .container {
+        position: relative;
+        width: 1100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+      }
+
+      @media (max-width: 992px) {
+        .container {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 540px) {
+        .container {
+          flex-direction: row;
+          overflow-x: clip;
+        }
+      }
+
+      .container > .card {
+        position: relative;
+        max-width: 300px;
+        height: 420px;
+        background-color: #fff;
+        margin: 30px 10px;
+        padding: 20px 15px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        transition: 0.3s ease-in-out;
+      }
+
+      @media (hover: hover) {
+        .container > .card {
+          height: 200px;
+        }
+
+        .container > .card:hover {
+          height: 420px;
+        }
+      }
+
+      .container > .card > .img-box {
+        position: relative;
+        width: 260px;
+        height: 260px;
+        top: -60px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .container > .card > .img-box > img {
+        max-width: 100%;
+        height: 100%;
+        min-height: 200px;
+        border-radius: 4px;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .container > .card > .img-box > h2 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 6px 0;
+        transition: 0.3s ease-in-out;
+      }
+
+      .container > .card > .content {
+        position: relative;
+        margin-top: -140px;
+        padding: 10px 15px;
+        text-align: center;
+        color: #111;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+      }
+
+      .container > .card:hover > .content {
+        visibility: visible;
+        opacity: 1;
+        padding: 100px 0 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="img-box">
+          <img
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcmkt-image-prd.freetls.fastly.net%2F0.1.0%2Fps%2F2574705%2F600%2F400%2Fm2%2Ffpnw%2Fwm0%2F960_grid_12_col-ok-.jpg%3F1492757681%26s%3D5ccfb33e59056662bceb355affd05b42&f=1&nofb=1&ipt=1f223b83063b15f4c6fd84f9e1b6f9a4c1c5168a34c8f8145d52665f5bc9b2f2&ipo=images"
+            alt=""
+          />
+          <h2>Desktop View</h2>
+        </div>
+
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
+            ducimus nesciunt voluptates rerum optio repellat eos velit, deleniti
+            alias laudantium natus ullam quam exercitationem
+          </p>
+          <button>Click me</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img-box">
+          <img
+            src="https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <h2>Source Code</h2>
+        </div>
+
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
+            ducimus nesciunt voluptates rerum optio repellat eos velit,
+          </p>
+          <button>Click me</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img-box">
+          <img
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F86%2Fd9%2Fee%2F86d9ee910e294f635fa658b1be08d038.png&f=1&nofb=1&ipt=52c2c57b1a21b106a3613ea25bc328ea487c0cd49451a901fc5ff7908f8a5768&ipo=images"
+            alt=""
+          />
+          <h2>Mobile View</h2>
+        </div>
+
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
+            ducimus nesciunt voluptates rerum optio repellat eos velit, deleniti
+            alias laudantium natus ullam quam exercitationem quibusdam
+          </p>
+          <button>Click me</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
